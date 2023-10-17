@@ -2,22 +2,22 @@ import CardList from '@/components/cardList/CardList'
 import Featured from '@/components/featured/Featured'
 import React from 'react'
 
+const getData = async (page) => {
+    const res = await fetch(`/api/posts?page=${page}`, {
+        cache: "no-store",
+    });
+
+    if (!res.ok) {
+        throw new Error("Failed");
+    }
+
+    return res.json();
+}
 export default async function Page( { searchParams } ) {
   const page = parseInt(searchParams?.page) || 1;  
 
-  const getData = async () => {
-      const res = await fetch(`/api/posts?page=${page}`, {
-          cache: "no-store",
-      });
 
-      if (!res.ok) {
-          throw new Error("Failed");
-      }
-
-      return res.json();
-  }
-
-  const data = await getData()
+  const data = await getData(page)
 
   return (
     <div>
