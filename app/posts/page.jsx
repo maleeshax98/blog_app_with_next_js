@@ -23,7 +23,7 @@ export default async function Page( { searchParams } ) {
     <div>
       <div className='mt-[50px]'>
         <h1 className='font-bold text-2xl'>All posts</h1>
-        <h1 className='mb-[10px] font-light text-sm text-gray-400'>That's it</h1>
+        <h1 className='mb-[10px] font-light text-sm text-gray-400'>That&apos;s it</h1>
         { data?.posts && <CardList data={data?.posts} count={data?.count}/>}
         
       </div>
