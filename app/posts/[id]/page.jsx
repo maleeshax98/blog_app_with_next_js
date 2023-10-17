@@ -27,7 +27,7 @@ export default function Page({ params }) {
             <p className="font-light text-sm">{data?.user?.name}</p>
           </div>
           <div className="w-[100%] h-[350px] overflow-hidden relative mt-[30px]">
-            <Image src={data?.img} fill className="rounded-md w-[100%] h-[100%] max-h-[450px] object-cover"  alt={data?.title}/>
+            <Image src={data?.img} priority fill className="rounded-md w-[100%] h-[100%] max-h-[450px] object-cover"  alt={data?.title}/>
           </div>
           <div dangerouslySetInnerHTML={{__html: data?.content}} className="mt-[20px] text-md"></div>
         </div>

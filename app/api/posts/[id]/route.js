@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 
 export async function GET(req, { params }){
     try {
-        console.log(params)
+        console.log("params")
         
         if (!mongoose.Types.ObjectId.isValid(params.id)) {
             

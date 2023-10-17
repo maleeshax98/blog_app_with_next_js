@@ -1,21 +1,14 @@
 import CardList from '@/components/cardList/CardList'
 import Featured from '@/components/featured/Featured'
-import React from 'react'
+import useGetAllPosts from '@/hooks/useGetAllPosts'
 
-const getData = async () => {
-  const res = await fetch("/api/posts", {
-      cache: "no-store",
-  });
 
-  if (!res.ok) {
-      throw new Error("Failed");
-  }
-
-  return res.json();
-}
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+export const revalidate = 0;
 
 export default async function Page() {
-  const data = await getData()
+  const data = await useGetAllPosts()
 
   return (
     <div>

@@ -1,21 +1,12 @@
+
 import React from 'react'
 import Tags from '../tags/Tags'
 import SingleMenuCard from '../singleMenuCard/SingleMenuCard'
+import useGetPopularPosts from '@/hooks/useGetPopularPosts'
+
 
 export default async function Menu() {
-  const getData = async () => {
-    const res = await fetch("/api/posts/popular", {
-        cache: "no-store",
-    });
-
-    if (!res.ok) {
-        throw new Error("Failed");
-    }
-
-    return res.json();
-}
-
-  const data = await getData()
+  const data = await useGetPopularPosts()
   return (
     <div>
         <div>
@@ -35,13 +26,15 @@ export default async function Menu() {
           <div>
             
             { data?.posts && data?.posts.slice(0, 5).map((doc) => (
-              <SingleMenuCard 
+              <div key={doc.id}>
+                  <SingleMenuCard 
                 key={doc._id} 
                 title={doc.title}
                 cato={doc.cato}
                 img={doc.img}
                 content={doc.content}
               />
+              </div>
             ))}
           </div>
         </div>

@@ -1,20 +1,14 @@
+
 import CardList from '@/components/cardList/CardList'
+import useGetPopularPosts from '@/hooks/useGetPopularPosts'
 import React from 'react'
 
-const getData = async () => {
-  const res = await fetch(`/api/posts/popular`, {
-      cache: "no-store",
-  });
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+export const revalidate = 0;
 
-  if (!res.ok) {
-      throw new Error("Failed");
-  }
-
-  return res.json();
-}
 export default async function Page() {
-
-const data = await getData()
+  const data = await useGetPopularPosts()
   return (
     <div>
       <div className='mt-[50px]'>

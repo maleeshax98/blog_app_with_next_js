@@ -12,7 +12,7 @@ export default function useGetMyPosts() {
             setError(null)
             setLoading(true)
             
-            const res = await axios.get("/api/posts/acount")
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/acount`)
             
             console.log(res)
 

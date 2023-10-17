@@ -9,7 +9,7 @@ export default async function Featured({ featured }) {
             { featured && (
                 <div className={`${styles.container} flex-cols justify-center md:flex `}>
                     <div className={styles.imageContainer}>
-                        <Image src={featured.img} fill className="object-cover rounded-xl" alt=""  />
+                        <Image src={featured.img} fill className="object-cover rounded-xl" alt="" sizes="" />
                     </div>
                     <div className={styles.textContainer}>
                         <div className="cato font-medium float-left">

@@ -6,14 +6,14 @@ export default function useGetSinglePost(id) {
     const [error, setError] = useState(null)
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
-
+    console.log(process.env.NEXT_PUBLIC_BASE_URL)
     const get = async (id) => {
 
         try {
             setError(null)
             setLoading(true)
             
-            const res = await axios.get(`/api/posts/${id}`)
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${id}`)
             
             console.log(res)
 

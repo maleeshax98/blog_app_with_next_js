@@ -13,7 +13,7 @@ export default function useDeletePost() {
         try {
             setError(null)
             
-            const res = await axios.delete(`/api/posts/${id}`)
+            const res = await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${id}`)
 
             if(res?.data?.deleted){
                 router.push("/posts/my-posts")

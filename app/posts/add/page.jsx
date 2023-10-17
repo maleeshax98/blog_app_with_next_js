@@ -6,8 +6,8 @@ import { storage } from "@/firebase/firebase";
 import useAddPost from "@/hooks/useAddPost";
 import Image from "next/image";
 import Select from 'react-select';
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import dynamic from "next/dynamic";
 
 
 const options = [
@@ -20,6 +20,7 @@ const options = [
 
 
 export default function Page() {
+  const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
   const [cato, setCato] = useState(null);
@@ -125,8 +126,9 @@ export default function Page() {
 
         <br />
         <br />
+        <button className='btn'>Publish Post</button>
 
-        { uploading ? (
+        {/* { uploading ? (
           <button className='btn cursor-not-allowed bg-green-300' disabled>Uploading...</button>
         ) : loading ? (
             <button className='btn flex items-center gap-2'>
@@ -135,7 +137,8 @@ export default function Page() {
             </button>
         ) : (
           <button className='btn'>Publish Post</button>
-        )}
+        )} */}
     </form>
   )
 }
+
