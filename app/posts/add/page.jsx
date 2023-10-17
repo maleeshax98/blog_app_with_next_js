@@ -19,8 +19,8 @@ const options = [
 ];
 
 
-export default function Page() {
   const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+export default function Page() {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
   const [cato, setCato] = useState(null);
