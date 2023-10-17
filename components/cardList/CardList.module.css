@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cardList{
+    flex: 8;
+}
+
+.menu{
+    flex: 4;
+    /* max-width: 250px; */
+}

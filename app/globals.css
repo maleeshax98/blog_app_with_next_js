@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    max-width: 1280px;
+    margin: 0 auto ;
+    padding: 10px;
+}
+  
+.btn {
+    @apply p-2 rounded-md bg-green-400 text-white font-semibold
+}
+
+.cato {
+    @apply rounded-xl text-xs 
+}
+
+.catoCard{
+    @apply p-[10px] font-semibold rounded-xl min-w-[100px] text-center text-white
+}
+
+input{
+    @apply p-2 rounded-md border-2 border-green-400 outline-none 
+}

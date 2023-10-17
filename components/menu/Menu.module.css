@@ -1,0 +1,18 @@
+.container{
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageContainer {
+    height: 150px;
+    flex: 1;
+    border-radius: 20px;
+    position: relative;
+    max-width: 250px;
+}
+
+.textContainer{
+    flex: 2;
+    max-width: 450px;
+}
