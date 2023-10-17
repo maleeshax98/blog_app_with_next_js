@@ -29,8 +29,8 @@ export default function Page(  ) {
         )}
         <div>
           { data && data.map((doc) => (
-            <div className='mt-[20px]'>
-              <Image src="/icons/delete.svg" width={20} height={20} onClick={() => { deletePost(doc.id) }}/>
+            <div className='mt-[20px]'  key={doc.id}>
+              <Image src="/icons/delete.svg" width={20} height={20} onClick={() => { deletePost(doc.id) }} alt="Delete Icon"/>
               <SingleCard 
                 key={doc.id}
                 id={doc.id}
