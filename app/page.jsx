@@ -2,20 +2,20 @@ import CardList from '@/components/cardList/CardList'
 import Featured from '@/components/featured/Featured'
 import React from 'react'
 
-export default async function Page() {
-  const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/posts", {
-        cache: "no-store",
-    });
+const getData = async () => {
+  const res = await fetch("/api/posts", {
+      cache: "no-store",
+  });
 
-    if (!res.ok) {
-        throw new Error("Failed");
-    }
+  if (!res.ok) {
+      throw new Error("Failed");
+  }
 
-    return res.json();
+  return res.json();
 }
 
-const data = await getData()
+export default async function Page() {
+  const data = await getData()
 
   return (
     <div>

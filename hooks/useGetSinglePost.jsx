@@ -13,7 +13,7 @@ export default function useGetSinglePost(id) {
             setError(null)
             setLoading(true)
             
-            const res = await axios.get(`http://localhost:3000/api/posts/${id}`)
+            const res = await axios.get(`/api/posts/${id}`)
             
             console.log(res)
 
