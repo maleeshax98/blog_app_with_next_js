@@ -1,24 +1,12 @@
 import CardList from '@/components/cardList/CardList'
 import Featured from '@/components/featured/Featured'
+import useGetAllPosts from '@/hooks/useGetAllPosts';
 import React from 'react'
 
-const getData = async (page) => {
-    const res = await fetch(`/api/posts?page=${page}`, {
-        cache: "no-store",
-    });
 
-    if (!res.ok) {
-        throw new Error("Failed");
-    }
-
-    return res.json();
-}
 export default async function Page( { searchParams } ) {
   const page = parseInt(searchParams?.page) || 1;  
-
-
-  const data = await getData(page)
-
+  const data = await useGetAllPosts(page)
   return (
     <div>
       <div className='mt-[50px]'>

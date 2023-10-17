@@ -15,7 +15,7 @@ export default function useAddPost( ) {
             setLoading(true)
             let img = media
             
-            const res = await axios.post("/api/posts", {
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`, {
                 title,
                 content,
                 img,

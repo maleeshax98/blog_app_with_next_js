@@ -55,7 +55,7 @@ export default function Navbar() {
                     ) : status === "authenticated" ? (
                         <div className='flex gap-2 items-center'>
                             <Link href={'/posts/add'} >
-                                <Image src="/icons/add.svg" width={50} height={50} alt=''/>
+                                <Image src="/icons/add.svg" width={50} height={50} alt='' priority/>
                             </Link>
                             <Link  href="/posts/my-posts">
                             <Image src={session?.user?.image} width={50} height={50} className=' rounded-full' alt=''/>
@@ -72,7 +72,7 @@ export default function Navbar() {
             {
                 showNav && (
                     <ul className='flex flex-col text-md md:hidden text-black gap-4 mt-[-70px] font-semibold bg-white fixed h-[100vh] w-[100vw] z-[100] p-[20px] rounded-lg'>
-                        <Image src="/icons/close.svg" className="flex md:hidden" width={30} height={30} onClick={ () => { setShowNav((prev) => !prev) } } />
+                        <Image src="/icons/close.svg" priority alt="H" className="flex md:hidden" width={30} height={30} onClick={ () => { setShowNav((prev) => !prev) } } />
                     
                     <Link className={`link ${pathname === '/' ? 'text-green-500' : ''}`} href="/">
                         <li>Home</li>
