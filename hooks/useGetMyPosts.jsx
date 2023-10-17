@@ -12,7 +12,7 @@ export default function useGetMyPosts() {
             setError(null)
             setLoading(true)
             
-            const res = await axios.get("http://localhost:3000/api/posts/acount")
+            const res = await axios.get("/api/posts/acount")
             
             console.log(res)
 

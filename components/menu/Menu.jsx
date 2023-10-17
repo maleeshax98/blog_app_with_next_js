@@ -4,7 +4,7 @@ import SingleMenuCard from '../singleMenuCard/SingleMenuCard'
 
 export default async function Menu() {
   const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/posts/popular", {
+    const res = await fetch("/api/posts/popular", {
         cache: "no-store",
     });
 

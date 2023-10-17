@@ -6,7 +6,7 @@ export default async function Page( { searchParams } ) {
   const page = parseInt(searchParams?.page) || 1;  
 
   const getData = async () => {
-      const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
+      const res = await fetch(`/api/posts?page=${page}`, {
           cache: "no-store",
       });
 
