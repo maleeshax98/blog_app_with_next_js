@@ -19,7 +19,7 @@ const options = [
 ];
 
 
-export default function page() {
+export default function Page() {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
   const [cato, setCato] = useState(null);

@@ -2,7 +2,7 @@ import CardList from '@/components/cardList/CardList'
 import Featured from '@/components/featured/Featured'
 import React from 'react'
 
-export default async function page( { searchParams } ) {
+export default async function Page( { searchParams } ) {
   const page = parseInt(searchParams?.page) || 1;  
 
   const getData = async () => {

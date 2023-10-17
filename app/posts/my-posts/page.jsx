@@ -5,7 +5,7 @@ import useGetMyPosts from '@/hooks/useGetMyPosts';
 import Image from 'next/image';
 import React from 'react'
 
-export default function page(  ) {
+export default function Page(  ) {
 
   const { data, error, loading } = useGetMyPosts()
   const { deletePost, error: delError } = useDeletePost()
