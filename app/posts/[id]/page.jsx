@@ -3,7 +3,7 @@ import useGetSinglePost from '@/hooks/useGetSinglePost'
 import React from 'react'
 import Image from 'next/image'
 
-export default function page({ params }) {
+export default function Page({ params }) {
   const { id } = params
   const { data, error, loading } = useGetSinglePost(id)
   console.log(data)

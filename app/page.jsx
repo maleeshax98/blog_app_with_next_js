@@ -2,7 +2,7 @@ import CardList from '@/components/cardList/CardList'
 import Featured from '@/components/featured/Featured'
 import React from 'react'
 
-export default async function page() {
+export default async function Page() {
   const getData = async () => {
     const res = await fetch("http://localhost:3000/api/posts", {
         cache: "no-store",

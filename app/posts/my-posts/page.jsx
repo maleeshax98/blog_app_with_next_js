@@ -5,7 +5,7 @@ import useGetMyPosts from '@/hooks/useGetMyPosts';
 import Image from 'next/image';
 import React from 'react'
 
-export default function page(  ) {
+export default function Page(  ) {
 
   const { data, error, loading } = useGetMyPosts()
   const { deletePost, error: delError } = useDeletePost()
@@ -29,8 +29,8 @@ export default function page(  ) {
         )}
         <div>
           { data && data.map((doc) => (
-            <div className='mt-[20px]'>
-              <Image src="/icons/delete.svg" width={20} height={20} onClick={() => { deletePost(doc.id) }}/>
+            <div className='mt-[20px]'  key={doc.id}>
+              <Image src="/icons/delete.svg" width={20} height={20} onClick={() => { deletePost(doc.id) }} alt="Delete Icon"/>
               <SingleCard 
                 key={doc.id}
                 id={doc.id}
